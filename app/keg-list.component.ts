@@ -4,7 +4,7 @@ import  {Keg}from './keg.model';
 @Component({
   selector: 'keg-list',
   template: `
-  <select (change)="onChange($event.target.value)">
+  <select (change)="onChange($event.target.value)" class="form-control selectType">
     <option value="AllKegs" selected="selected">All Kegs</option>
     <option value="Porter">Porter</option>
     <option value="Stout" >Stout</option>
@@ -16,6 +16,7 @@ import  {Keg}from './keg.model';
   </select>
 
   <div class="row" >
+  <br>
       <div class="col-md-4" *ngFor="let currentKeg of childKegList | type:filterByType">
        <div class="panel panel-default">
          <div class="panel-heading">
@@ -48,10 +49,7 @@ export class KegListComponent{
   @Output()clickSender= new EventEmitter();
 
   sellPint(keg: Keg){
-    console.log("we are selling a pint");
-    console.log(keg.quantity);
     keg.quantity -= 1;
-    console.log(keg.quantity);
   }
 
   editButtonHasBeenClicked(kegToEdit: Keg) {

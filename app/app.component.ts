@@ -4,8 +4,18 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'app-root',
   template: `
+  <div class="container-fluid banner">
+    <div class = "row">
+      <div class="aboutDiv col-md-4"><h1>Mountain Bear <br>Tap House</h1>
+      <br>
+      <img src="resources/images/Group.png" width="100px">
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+      </div>
+    </div>
+  </div>
   <div class="container">
-  <keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
+  <br><keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
   <div class="row">
     <div class="col-md-6">
       <keg-new (newKegSender)="addKeg($event)"></keg-new>
