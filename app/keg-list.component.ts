@@ -6,7 +6,7 @@ import  {Keg}from './keg.model';
   template: `
   <div class="kegListDiv" *ngFor="let currentKeg of childKegList">
     <p>
-      {{currentKeg.name}}
+      {{currentKeg.name}}<button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
     </p>
   </div>
   `
@@ -16,4 +16,8 @@ import  {Keg}from './keg.model';
 export class KegListComponent{
   @Input()childKegList: Keg[];
   @Output()clickSender= new EventEmitter();
+
+  editButtonHasBeenClicked(kegToEdit: Keg) {
+    this.clickSender.emit(kegToEdit);
+  }
 }

@@ -5,20 +5,20 @@ import { Keg } from './keg.model';
   selector: 'app-root',
   template: `
   <div class="container">
-  <keg-list></keg-list>
-  <keg-edit></keg-edit>
-  <keg-new></keg-new>
+  <keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
+  <keg-edit [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()" ></keg-edit>
+  <keg-new (newKegSender)="addKeg($event)"></keg-new>
   <keg-low></keg-low>
   </div>
   `
 
 })
 export class AppComponent{
-
   masterKegList:Keg[]=[
     new Keg("The Vaporizer", "Double Mountain Brewery", "Summer Sipper", "Hazy-gold with a sweet, grainy start and a dry, lemony finish, this dry-hopped summer sipper is brewed with pilsner malt and Challenger hops grown in Washington’s Yakima Valley. ","8", "6", "124"),
     new Keg("Blue Dot Double India Pale Ale", "Hair of the Dog Brewing", "IPA", "Next to brewer Alan Sprints’s barrel-aged beasts, Blue Dot seems tame by comparison. But few Imperial IPAs are this well behaved. It’s brawny and resinously hoppy without the acrid finish that can mar lesser interpretations.","7", "7", "124"),
   ];
+  selectedKeg = null;
   finishedEditing() {
     this.selectedKeg = null;
   }

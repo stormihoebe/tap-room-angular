@@ -5,6 +5,7 @@ import { Keg } from './keg.model';
   selector: 'keg-edit',
   template: `
     <div>
+    <h1> this is where the edit form is</h1>
       <div *ngIf="childSelectedKeg">
         <h3>Edit Keg {{childSelectedKeg.name}} </h3>
         <div class="form-group">
@@ -41,7 +42,7 @@ import { Keg } from './keg.model';
     `
   })
 
-  export class EditKegComponent {
+  export class KegEditComponent {
     @Input() childSelectedKeg: Keg;
     @Output() doneButtonClickedSender = new EventEmitter();
 
