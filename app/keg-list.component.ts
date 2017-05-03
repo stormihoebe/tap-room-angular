@@ -27,11 +27,14 @@ import  {Keg}from './keg.model';
           <p>
             {{currentKeg.description}}
           </p>
+          <p>Pints Remaining: {{currentKeg.quantity}}</p>
           <h4>
             <span [class]="abvColor(currentKeg)"> ABV: {{currentKeg.abv}}%</span> <span class="pull-right">$ {{currentKeg.price}}</span>
           </h4>
           <br>
            <button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
+           <button class="btn btn-default pull-right"  (click)="sellPint(currentKeg)">Pint Purchase</button>
+
          </div>
        </div>
      </div>
@@ -44,9 +47,17 @@ export class KegListComponent{
   @Input()childKegList: Keg[];
   @Output()clickSender= new EventEmitter();
 
+  sellPint(keg: Keg){
+    console.log("we are selling a pint");
+    console.log(keg.quantity);
+    keg.quantity -= 1;
+    console.log(keg.quantity);
+  }
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
+
   abvColor(currentKeg){
     if(currentKeg.abv === 0){
       return "bg-info";
