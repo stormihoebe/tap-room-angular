@@ -34,7 +34,11 @@ import {Keg} from './keg.model';
       <label>Quantity Remaining:</label>
       <input #newQuantity class="form-control">
     </div>
-    <button (click)="submitForm(newName.value, newBrand.value, newType.value, newDescription.value, newPrice.value, newAbv.value, newQuantity.value); newDescription.value='';">Add</button>
+    <div class="form-group">
+      <label>Image URl:</label>
+      <input #newImage class="form-control">
+    </div>
+    <button (click)="submitForm(newName.value, newBrand.value, newType.value, newDescription.value, newPrice.value, newAbv.value, newQuantity.value, newImage.value); newDescription.value='';">Add</button>
 </form>
 `
 })
@@ -42,8 +46,8 @@ import {Keg} from './keg.model';
 export class KegNewComponent {
   @Output() newKegSender = new EventEmitter();
 
-  submitForm( name: string,  brand: string,  type: string,  description: string,  price: string,  abv: string,  quantity: string){
-    var newKegToAdd: Keg = new Keg (name, brand, type, description, price, abv, quantity);
+  submitForm( name: string,  brand: string,  type: string,  description: string,  price: string,  abv: string,  quantity: string, image: string){
+    var newKegToAdd: Keg = new Keg (name, brand, type, description, price, abv, quantity, image);
     this.newKegSender.emit(newKegToAdd);
   }
 }

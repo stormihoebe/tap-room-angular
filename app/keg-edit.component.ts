@@ -5,7 +5,6 @@ import { Keg } from './keg.model';
   selector: 'keg-edit',
   template: `
     <div>
-    <h1> this is where the edit form is</h1>
       <div *ngIf="childSelectedKeg">
         <h3>Edit Keg {{childSelectedKeg.name}} </h3>
         <div class="form-group">
@@ -35,6 +34,10 @@ import { Keg } from './keg.model';
         <div class="form-group">
           <label>Quantity Remaining:</label>
           <input [(ngModel)]="childSelectedKeg.quantity" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Image Url:</label>
+          <input [(ngModel)]="childSelectedKeg.image" class="form-control">
         </div>
         <button (click)="doneButtonClicked()">Submit Changes</button>
       </div>
