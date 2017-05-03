@@ -47,7 +47,10 @@ export class KegNewComponent {
   @Output() newKegSender = new EventEmitter();
 
   submitForm( name: string,  brand: string,  type: string,  description: string,  price: string,  abv: string,  quantity: string, image: string){
-    var newKegToAdd: Keg = new Keg (name, brand, type, description, price, abv, quantity, image);
+    if (image === "") {
+      image = "http://vignette3.wikia.nocookie.net/simpsons/images/f/f7/Duff_Beer.png/revision/latest?cb=20130915031534";
+    }
+    var newKegToAdd: Keg = new Keg (name, brand, type, description, parseInt(price), parseInt(abv), parseInt(quantity), image);
     this.newKegSender.emit(newKegToAdd);
   }
 }

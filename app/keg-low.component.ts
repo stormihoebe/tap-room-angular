@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter} from '@angular/core';
+import {Component, Input, EventEmitter} from '@angular/core';
 import {Keg} from './keg.model';
 
 @Component({

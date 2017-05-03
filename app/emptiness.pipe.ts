@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Task} from './keg.model';
+import {Keg} from './keg.model';
 
 @Pipe({
   name: "emptiness",
