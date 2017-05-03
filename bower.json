@@ -1,0 +1,20 @@
+{
+  "name": "tap-room",
+  "description": "Tap room app",
+  "main": "index.js",
+  "authors": [
+    "jahan and stormi"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "none"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
