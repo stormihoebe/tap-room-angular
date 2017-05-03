@@ -29,7 +29,7 @@ import  {Keg}from './keg.model';
             {{currentKeg.description}}
           </p>
           <p>Pints Remaining: {{currentKeg.quantity}}</p>
-          <h4>
+          <h4 id="abvH4">
             <span [class]="abvColor(currentKeg)"> ABV: {{currentKeg.abv}}%</span> <span class="pull-right">$ {{currentKeg.price}}</span>
           </h4>
           <br>

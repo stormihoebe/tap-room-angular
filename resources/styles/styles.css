@@ -23,7 +23,7 @@ form {
 }
 
 
-.aboutDiv p{
+.aboutDiv em{
   font-size: 18px;
 }
 .aboutDiv {
@@ -41,4 +41,12 @@ form {
 img {
   display: block;
   margin: auto;
+}
+
+body{
+  max-width: 1200px;
+  margin: auto;
+}
+#abvH4{
+  text-align: left;
 }
