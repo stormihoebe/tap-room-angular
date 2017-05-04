@@ -4,7 +4,10 @@ import {Keg} from './keg.model';
 @Component({
   selector: 'keg-new',
   template:
-  `<button (click)="newButtonClicked()" class="btn btn-info">Add Keg</button>
+  ` <div class="kegStand pull-left" (click)="newButtonClicked()">
+      <img src="resources/images/kegStand.png" width="70px">
+      <h3>Add Kegs</h3>
+    </div>
   <div *ngIf="addNewKeg">
     <form class="well" id="addNewForm">
       <div class="form-group">

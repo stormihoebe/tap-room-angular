@@ -4,7 +4,7 @@ import {Keg} from './keg.model';
 @Component({
   selector: 'keg-low',
   template:
-  `<h4>Kegs are low </h4>
+  `<h1>Fill These Kegs</h1>
   <div class="row" >
       <div class="col-md-4" *ngFor="let currentKeg of childKegList | emptiness">
        <div class="panel panel-default">
