@@ -18,13 +18,13 @@ import { Keg } from './keg.model';
         <div class="form-group">
         <label for="selectType">Type</label>
         <select ng-model="data.childSelectedKeg.type" [(ngModel)]="childSelectedKeg.type"  class="form-control">
-          <option value="Porter">Porter</option>
-          <option value="Stout" >Stout</option>
-          <option value="Ale" >Ale</option>
-          <option value="Lager" >Lager</option>
-          <option value="Pilsner" >Pilsner</option>
-          <option value="MaltLiqour" >Malt Liqour</option>
-          <option value="Other" >Other</option>
+          <option class="opt" value="Porter">Porter</option>
+          <option class="opt" value="Stout" >Stout</option>
+          <option class="opt" value="Ale" >Ale</option>
+          <option class="opt" value="Lager" >Lager</option>
+          <option class="opt" value="Pilsner" >Pilsner</option>
+          <option class="opt" value="MaltLiqour" >Malt Liqour</option>
+          <option class="opt" value="Other" >Other</option>
         </select>
         </div>
         <div class="form-group">

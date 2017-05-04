@@ -5,15 +5,19 @@ import  {Keg} from './keg.model';
   selector: 'keg-list',
   template: `
   <select (change)="onChange($event.target.value)" class="form-control selectType">
-    <option value="AllKegs" selected="selected">All Kegs</option>
-    <option value="Porter">Porter</option>
-    <option value="Stout" >Stout</option>
-    <option value="Ale" >Ale</option>
-    <option value="Lager" >Lager</option>
-    <option value="Pilsner" >Pilsner</option>
-    <option value="MaltLiqour" >Malt Liqour</option>
-    <option value="Other" >Other</option>
+    <optgroup class="black">
+      <option value="AllKegs" selected="selected">All Kegs</option>
+      <option value="Porter">Porter</option>
+      <option value="Stout" >Stout</option>
+      <option value="Ale" >Ale</option>
+      <option value="Lager" >Lager</option>
+      <option value="Pilsner" >Pilsner</option>
+      <option value="MaltLiqour" >Malt Liqour</option>
+      <option value="Other" >Other</option>
+    </optgroup>
   </select>
+
+
 
   <div class="row" >
   <br>
