@@ -11,7 +11,7 @@ select{
   color: #c39449 !important;
 }
 
-.opt{
+option:active{
   background-color: red !important;
   color: gold !important;
 }
