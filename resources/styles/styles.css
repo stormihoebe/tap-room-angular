@@ -261,3 +261,94 @@ transition: all 400ms cubic-bezier(.16,1.23,.87,1.18);
 .earth:hover ~ .current{
   left: 91.1%;
 }
+
+/*flip stuff */
+
+
+* {
+  box-sizing: border-box;
+}
+
+.hover-fold {
+  background: #c39449;
+  border: 5px white solid;
+  height: 390px;
+  /*margin: auto;*/
+  -moz-perspective: 1500;
+  -webkit-perspective: 1500;
+  perspective: 1500;
+  position: relative;
+  width: 390px;
+}
+.hover-fold h2 {
+  border-bottom: 1px solid #333;
+  /*margin: 0 40px;*/
+  padding: 110px 0 2px;
+}
+.hover-fold .top {
+  height: 40%;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+.hover-fold .top .face {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+.hover-fold:hover .top {
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+.hover-fold .front {
+  height: 100%;
+  /*has to be 100% of .top */
+  width: 100%;
+}
+.hover-fold .back {
+  background: #c39449;
+  height: 100%;
+  /*has to be 100% of .top */
+  padding: 20px 20px;
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  width: 100%;
+}
+.hover-fold .back p {
+  margin: 0;
+}
+.hover-fold .bottom {
+  height: 40%;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  z-index: 0;
+}
+.cards, .col-md-4{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important ;
+}
+.cardButtonRow{
+padding: 20px;
+}

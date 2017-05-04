@@ -17,37 +17,39 @@ import  {Keg} from './keg.model';
 
   <div class="row" >
   <br>
-      <div class="col-md-4" *ngFor="let currentKeg of childKegList | type:filterByType">
-       <div class="panel panel-default">
-         <div class="panel-heading">
-           <h4>{{currentKeg.name}} ({{currentKeg.type}})</h4>
-        </div>
-        <div class="panel-body">
-          <img src={{currentKeg.image}} width="100%">
-          <h4>{{currentKeg.brand}}</h4>
-          <p>
-            {{currentKeg.description}}
-          </p>
-          <p>Pints Remaining: {{currentKeg.quantity}}</p>
-          <h4 id="abvH4">
-            <span [class]="abvColor(currentKeg)"> ABV: {{currentKeg.abv}}%</span> <span class="pull-right">$ {{currentKeg.price}}</span>
-          </h4>
-          <br>
-           <button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
-           <div class="pull-right form-group">
-            <select (change)="onChangePurchase($event.target.value, currentKeg)" class="form-control">
-               <option value="Pint" selected="selected">Pint</option>
-               <option value="Growler">Growler</option>
-               <option value="LargeGrowler">Large Growler</option>
-               <option value="Keg">Remaining Keg</option>
-            </select>
-          </div>
+    <div class="col-md-4 cards" *ngFor="let currentKeg of childKegList | type:filterByType">
+      <div class="hover-fold">
+      <br>
+        <h4>{{currentKeg.name}} ({{currentKeg.type}})</h4>
+        <br>
+        <div class="cardButtonRow">
+          <button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
+          <div class="pull-right form-group">
+          <select (change)="onChangePurchase($event.target.value, currentKeg)" class="form-control">
+            <option value="Pint" selected="selected">Pint</option>
+            <option value="Growler">Growler</option>
+            <option value="LargeGrowler">Large Growler</option>
+            <option value="Keg">Remaining Keg</option>
+          </select>
          </div>
        </div>
+        <div class="top">
+          <div class="front face"><img src={{currentKeg.image}} width="100%"></div>
+          <div class="back face">
+            <h4>{{currentKeg.brand}}</h4>
+            <p>
+            {{currentKeg.description}}
+            </p>
+            <p>Pints Remaining: {{currentKeg.quantity}}</p>
+            <h4 id="abvH4">
+            <span [class]="abvColor(currentKeg)"> ABV: {{currentKeg.abv}}%</span> <span class="pull-right">$ {{currentKeg.price}}</span>
+            </h4>
 
-     </div>
-   </div>
-
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
   `
 
 })
