@@ -45,11 +45,10 @@ export class AppComponent{
     this.selectedKeg = null;
   }
 
-  addKeg(newKegFromChild: Keg){
-    this.masterKegList.push(newKegFromChild);
-  }
-
   editKeg(clickedKeg: Keg) {
    this.selectedKeg = clickedKeg;
+ }
+ addKeg(newKegFromChild: Keg){
+   this.masterKegList.push(newKegFromChild);
  }
 }

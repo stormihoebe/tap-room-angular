@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import  {Keg}from './keg.model';
+import  {Keg} from './keg.model';
 
 @Component({
   selector: 'keg-list',
@@ -35,11 +35,12 @@ import  {Keg}from './keg.model';
           <br>
            <button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
            <button class="btn btn-default pull-right"  (click)="sellPint(currentKeg)">Pint Purchase</button>
-
          </div>
        </div>
+
      </div>
    </div>
+
   `
 
 })

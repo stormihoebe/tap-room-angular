@@ -4,8 +4,8 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'keg-edit',
   template: `
-    <div>
-      <div *ngIf="childSelectedKeg">
+    <div *ngIf="childSelectedKeg">
+      <div class="well" id="editKegForm">
         <h3>Edit Keg {{childSelectedKeg.name}} </h3>
         <div class="form-group">
           <label>Keg Name:</label>
@@ -39,7 +39,7 @@ import { Keg } from './keg.model';
           <label>Image Url:</label>
           <input [(ngModel)]="childSelectedKeg.image" class="form-control">
         </div>
-        <button (click)="doneButtonClicked()">Submit Changes</button>
+        <button (click)="doneButtonClicked()" class="btn btn-default">Submit Changes</button>
       </div>
     </div>
     `
