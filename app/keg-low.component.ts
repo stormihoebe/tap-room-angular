@@ -17,10 +17,11 @@ import {Keg} from './keg.model';
           <p>
             {{currentKeg.description}}
           </p>
-          <h4> Quantity: {{currentKeg.quantity}}</h4>
-          <h4>
-            ABV: {{currentKeg.abv}}% <span class="pull-right">$ {{currentKeg.price}}</span>
+          <p>Pints Remaining: {{currentKeg.quantity}}</p>
+          <h4 id="abvH4">
+            <span> ABV: {{currentKeg.abv}}%</span> <span class="pull-right">$ {{currentKeg.price}}</span>
           </h4>
+          <br>
           <br>
           <button class="btn btn-danger" (click)="fillKeg(currentKeg)">Fill Keg</button>
          </div>

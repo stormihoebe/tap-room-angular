@@ -34,7 +34,14 @@ import  {Keg} from './keg.model';
           </h4>
           <br>
            <button class="btn btn-default"  (click)="editButtonHasBeenClicked(currentKeg)">Edit Details</button>
-           <button class="btn btn-default pull-right"  (click)="sellPint(currentKeg)">Pint Purchase</button>
+           <div class="pull-right form-group">
+            <select (change)="onChangePurchase($event.target.value, currentKeg)" class="form-control">
+               <option value="Pint" selected="selected">Pint</option>
+               <option value="Growler">Growler</option>
+               <option value="LargeGrowler">Large Growler</option>
+               <option value="Keg">Remaining Keg</option>
+            </select>
+          </div>
          </div>
        </div>
 
@@ -49,8 +56,28 @@ export class KegListComponent{
   @Input()childKegList: Keg[];
   @Output()clickSender= new EventEmitter();
 
+  onChangePurchase(size: string, keg: Keg){
+    if (size === "Pint"){
+      keg.quantity -= 1;
+    } else if( size === "Growler"){
+      keg.quantity -= 2;
+    } else if (size ==="LargeGrowler") {
+      keg.quantity -= 4;
+    } else{
+      keg.quantity = 0;
+    }
+  }
+
   sellPint(keg: Keg){
     keg.quantity -= 1;
+  }
+
+  purchaseGrowler(growler: Keg){
+    growler.quantity -= 2;
+  }
+
+  purchaseLargeGrowler(growler: Keg){
+    growler.quantity -= 4;
   }
 
   editButtonHasBeenClicked(kegToEdit: Keg) {
