@@ -14,6 +14,23 @@ import { Keg } from './keg.model';
       </div>
     </div>
   </div>
+  <div id="menuDiv">
+    <nav id="menu">
+       <ul>
+        <li class="rocket"><a href=""></a></li>
+        <li class="wine"><a href="">On Tap</a></li>
+        <li class="burger"><a href="">Good Eats</a></li>
+        <li class="comment"><a href="">Contact</a></li>
+        <li class="sport" ><a href="">Activities</a></li>
+        <li class="earth"><a href="">Locations</a></li>
+        <div class="current">
+          <div class="top-arrow"></div>
+          <div class="current-back"></div>
+          <div class="bottom-arrow"></div>
+        </div>
+      </ul>
+    </nav>
+  </div>
   <div class="container">
   <br><keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
   <div class="row">
