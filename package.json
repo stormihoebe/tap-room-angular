@@ -41,6 +41,17 @@
     "concurrently": "3.0.0",
     "lite-server": "2.2.2",
     "typescript": "2.2.2",
-    "typings":"1.3.2"
-  }
+    "typings": "1.3.2"
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwalsh370/tap-room.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jwalsh370/tap-room/issues"
+  },
+  "homepage": "https://github.com/jwalsh370/tap-room#readme",
+  "description": ""
 }
